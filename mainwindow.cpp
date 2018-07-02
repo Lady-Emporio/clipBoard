@@ -56,7 +56,7 @@ void MainWindow::slotScreen(){
     QScreen * screen = QGuiApplication :: primaryScreen();
     QPixmap originalPixmap = screen->grabWindow( 0 );
     QDate dateToday = QDate::currentDate();
-    QString now=dateToday.toString("dd.MM.yy");
+    QString now=dateToday.toString("yyyy.MM.dd");
     for(int i=0;i!=2000;++i){
         if(i==1500){
             buttom_Screen->setText("1500 file today");
@@ -67,9 +67,10 @@ void MainWindow::slotScreen(){
         if(!image.exists()){
             if (originalPixmap.save(fileName)){
                 buttom_Screen->setStyleSheet("background-color:green;");
-                QTimer *tmrt  = new QTimer(this);
-                tmrt->singleShot(3000, this, SLOT(updateBackground()));
-                tmrt ->start();
+                //QTimer *tmrt  = new QTimer(this);
+                //tmrt->singleShot(500, this, SLOT(updateBackground()));
+                //tmrt ->start();
+                QTimer::singleShot(500, this, SLOT(updateBackground()));
 
             }else{
                 buttom_Screen->setText("Не получилось");
