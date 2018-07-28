@@ -67,9 +67,6 @@ void MainWindow::slotScreen(){
         if(!image.exists()){
             if (originalPixmap.save(fileName)){
                 buttom_Screen->setStyleSheet("background-color:green;");
-                //QTimer *tmrt  = new QTimer(this);
-                //tmrt->singleShot(500, this, SLOT(updateBackground()));
-                //tmrt ->start();
                 QTimer::singleShot(500, this, SLOT(updateBackground()));
 
             }else{

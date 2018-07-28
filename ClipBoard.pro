@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QMAKE_CXXFLAGS_RELEASE -= -O0
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ClipBoard
