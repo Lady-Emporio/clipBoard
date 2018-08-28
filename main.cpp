@@ -25,7 +25,7 @@ LRESULT CALLBACK MyLowLevelKeyBoardProc(int nCode, WPARAM wParam, LPARAM lParam)
             return 1;
         }else if(key == 51){ //51=3
             QDateTime dateToday = QDateTime::currentDateTime();
-            QString text=dateToday.toString(" (заявка в май рено от yyyy.MM(MMMM).dd(dddd) HH:mm:ss ) ");
+            QString text=dateToday.toString(" (заявка в май рено от yyyy.MM.dd HH:mm:ss ) ");
             QClipboard* c = QApplication::clipboard();
             c->setText( text );
             return 1;
